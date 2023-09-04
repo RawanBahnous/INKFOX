@@ -1,0 +1,60 @@
+<div class="row text-white bg-black">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-5 text-center font-outward-block-sm">
+        <p class="p-5 m-3">wish you well choose</p>
+        </div>
+        <div class="col-lg-7 mb-sm-5 text-center  contain-search">
+          <div class="row justify-content-center mb-sm-5 text-right">
+            <div class="search-container">
+              <div class="input-container">
+                <input
+                  type="text"
+                  id="searchname"
+                  class="searchstyle text-white"
+                  #searchTerm
+                  placeholder="Search By Manga Name"
+                />
+                <a class="search-icon text-white" (click)="searchMangaByName(searchTerm.value)">
+                  <i class="fa fa-search"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluied bg-dark-alllist p-4">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-3 col-md-4 mt-2" *ngFor="let m of mangalist" >
+        <div class="card">
+          <div class="card-img-top" >
+            <img [src]="m.imageURL" width="100%" alt="" />
+          </div>
+          <div class="card-body mb-2">
+            <h3>{{m.Title}}</h3>
+            <h5>Type:
+              {{m.Type}}
+            </h5>
+            <p>price:
+              {{m.Price}}
+            </p>
+            <p class="ellipsis">
+              {{m.Desc}}
+            </p>
+            <a
+            routerLink="/mangalist/{{m.id}}"
+              class="buy-button mb-4">Manga Details</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

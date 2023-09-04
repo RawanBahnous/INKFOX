@@ -1,0 +1,134 @@
+<!-- register -->
+<div class="row justify-content-center border p-5 pb-5 bg-image-reg">
+  <div class="col-md-8 bg-transparen border pb-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center mt-4">
+        <h4 class="font-new">Waho You Gonna Fill Your Libarary!</h4>
+      </div>
+    </div>
+    <form [formGroup]="validatereg">
+      <div class="row justify-content-center mt-4">
+        <div class="col-md-1">
+          <label for="Username">Username</label>
+        </div>
+        <div class="col-md-6">
+          <input
+            type="text"
+            id="Username"
+            name="Username"
+            formControlName="Username"
+            placeholder="Enter Your Username"
+            class="w-100 input-group-text"
+          />
+          <span class="error" id="errorname"  *ngIf="
+          this.validatereg.get('Username')?.errors &&
+          this.validatereg.get('Username')?.touched
+        "
+        >Username is required</span
+      >
+        </div>
+      </div>
+      <div class="row justify-content-center mt-2">
+        <div class="col-md-1">
+          <label for="email">email</label>
+        </div>
+        <div class="col-md-6">
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            placeholder="Enter Your email"
+            class="w-100 input-group-text"
+          />
+          <span class="error" id="errormail" *ngIf="
+          this.validatereg.get('email')?.errors &&
+          this.validatereg.get('email')?.touched
+        "
+        >Email is required</span
+      >
+        </div>
+      </div>
+      <div class="row justify-content-center mt-2">
+        <div class="col-md-1">
+          <label for="password">password</label>
+        </div>
+        <div class="col-md-6">
+          <div class="input-group input-group-pss">
+            <input
+              type="{{ !showPassword ? 'password' : 'text' }}"
+              id="password"
+              formControlName="password"
+              placeholder="Enter Your password"
+              class="w-100 password-input"
+            />
+            <span class="input-group-text password-toggle" (click)="showPass()" style="cursor: pointer;">
+              <i class="{{ showPassword ? 'fa fa-eye-slash' : 'fa fa-eye' }}"></i>
+            </span>
+          </div>
+          <span class="error" id="errorpass"
+          *ngIf="validatereg.get('password')?.errors && validatereg.get('password')?.touched"
+
+          >Password is required</span>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-2">
+        <div class="col-md-1">
+          <label for="address">address</label>
+        </div>
+        <div class="col-md-6">
+          <input
+            type="text"
+            id="address"
+            formControlName="address"
+            placeholder="Enter Your address"
+            class="w-100 input-group-text"
+          />
+          <span
+            class="error"
+            id="erroraddr"
+            *ngIf="
+              validatereg.get('address')?.errors &&
+              validatereg.get('address')?.touched
+            "
+            >Address is Required</span
+          >
+        </div>
+      </div>
+      <div class="row justify-content-center mt-2">
+        <div class="col-md-1">
+          <label for="Phone">Phone</label>
+        </div>
+        <div class="col-md-6">
+          <input
+            type="number"
+            id="Phone"
+            formControlName="Phone"
+            placeholder="Enter Your Phone"
+            class="w-100 input-group-text"
+          />
+          <span class="error" id="errorphone"  *ngIf="
+          this.validatereg.get('Phone')?.errors &&
+          this.validatereg.get('Phone')?.touched">Phone is required</span>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-4">
+        <div class="col-md-6 text-center">
+          <a (click)="register()" class="button" type="submit" id="reg">Register</a>
+        </div>
+      </div>
+    </form>
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-6 text-center">
+        <a routerLink="/login">Login Instead</a>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-6 text-center">
+        <a class="google-btn">
+          <i class="fa fa-brands fa-google"></i>
+          Continue With Google</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

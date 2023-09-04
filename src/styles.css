@@ -1,0 +1,865 @@
+
+
+body{
+  overflow-x: hidden;
+  /* font-family: fantasy; */
+  font-family: 'Outward Borders';
+}
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+}
+::-webkit-scrollbar-track {
+  background-color: black;
+}
+::-webkit-scrollbar-thumb {
+  background-color: red;
+}
+
+
+@font-face {
+  font-family: 'Outward Borders';
+  src: url('Fonts/outward-borders.ttf') format('truetype');
+}
+
+.font-outward-border{
+  font-family: 'Outward Borders';
+  font-size: 10rem;
+}
+.height-img-list{
+  height: 150px;
+}
+
+@font-face {
+  font-family: 'Outward Block';
+  src: url('Fonts/outward-block-webfont.ttf') format('truetype');
+}
+.font-outward-block-sm{
+  font-family: 'Outward Block';
+  font-size: 10rem;
+}
+.font-outward-block-vsm{
+  font-family: 'Outward Block';
+  font-size: 4rem;
+  color: #fffefe;
+  padding-left: 3px;
+}
+.font-outward-block{
+  font-family: 'Outward Block';
+  font-size: 15rem;
+}
+.prev{
+  backdrop-filter: blur(7px) saturate(180%);
+  -webkit-backdrop-filter: blur(7px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: rgb(236, 83, 7);
+  text-align: center;
+  /* padding-top: 90%; */
+}
+
+.next{
+  backdrop-filter: blur(7px) saturate(180%);
+  -webkit-backdrop-filter: blur(7px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: rgb(238, 228, 228);
+  text-align: center;
+  /* padding-top: 90%; */
+}
+.noline{
+  text-decoration: none;
+}
+.heightoo{
+  height: 300px;
+}
+.c-point{
+  cursor: pointer;
+}
+.f-100{
+  font-family: fantasy;
+font-size: 250px;
+padding-top: 8rem;
+padding-bottom: 8rem;
+}
+.marl-2{margin-left: 50px;}
+.activeViews{
+  display: block;
+}
+  .bg-black{
+      background-color: black;
+  }
+  .text-orange{
+      color: rgb(255, 111, 0);
+  }
+  a{
+text-decoration: none;
+  }
+  a:hover{
+      text-decoration: none;
+      cursor: pointer;
+  }
+  textarea{
+      resize: none;
+  }
+  /* navbar */
+
+  .navbar ul li a:hover{
+    color: rgb(255, 115, 0);
+  }
+  .navbar ul li select:hover{
+    color: rgb(255, 115, 0);
+  }
+  .font-newww{
+    font-size: 3rem;
+  font-family: 'Outward Block';
+letter-spacing: 5.5px;
+text-decoration: none;
+color: #faf6f6;
+  }
+  /* Style the input container */
+.input-container {
+  position: relative;
+}
+
+.input-container .icon {
+  position: absolute;
+  top: 50%;
+  left: 72%;
+  padding-bottom: 2.5rem;
+  transform: translateY(-39%);
+  background-size: 20px;
+  width: 20px;
+  height: 20px;
+  color: rgb(229, 159, 134);
+}
+
+  .searchstyle{
+    padding: 0.5rem ;
+    outline: none;
+border: none;
+text-indent: 1rem;
+color: aliceblue;
+      border: 1px solid rgba(255,95,0,255);
+      border-radius: 20px;
+      background-color: transparent;
+  }
+  /* header */
+  .button{
+      background-color: rgb(255, 111, 0);
+      text-decoration: none;
+      padding: 5px 20px;
+      color: aliceblue;
+      border-radius: 0.5rem;
+      border: none;
+  }
+
+  .contain-slider .prev , .next{
+    /* position: fixed; */
+      /* margin-top: 20px; */
+      /* color: purple; */
+  color: rgb(236, 83, 7);
+
+  }
+
+  /* Top Mangas */
+  .contain-card{
+      position: relative;
+      margin-top: 55px;
+      margin-bottom: 55px;
+      background-color: rgb(224, 110, 44);
+      width: 100%;
+      height: 230px;
+      transition: 0.2s ease-in-out;
+  }
+  .contain-card .content{
+      visibility: hidden;
+      color: aliceblue;
+      padding: 5px;
+      transition: 0.1s ease-out;
+  }
+  .contain-card:hover {
+      height: auto;
+  }
+  .contain-card:hover .content{
+      visibility: visible;
+  }
+
+  .contain-card .img-box {
+      position: relative;
+      width: 100%;
+      top: -40px;
+      z-index: 1;
+      /* box-shadow: 0 5px 20px rgba(0,0,0, 0.4); */
+  }
+
+.movie-card {
+  position: relative;
+  /* width: 300px; */
+  height: 450px;
+  margin: auto;
+  overflow: hidden;
+  margin: auto;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 80%;
+}
+
+.image-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s;
+  color: #f1eeee;
+}
+
+.movie-card:hover .text-overlay {
+  opacity: 1;
+}
+.text-overlay p {
+  color: white;
+  font-size: 18px;
+  text-align: left;
+  padding: 10px;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+}
+
+
+@media  (max-width:900px) {
+.movie-card{
+  margin-left: 9rem;
+}
+}
+  /* some mangas */
+  .card img{
+      height: 200px;
+  }
+  .card .card-body{
+      height: 200px;
+      text-align: start;
+  }
+  .card{
+      /* background-color: rgb(47, 45, 45); */
+      transition: 0.4s ease-in-out;
+  }
+  .card:hover{
+      transform: scaleX(1.02)scaleY(1.02)
+  }
+
+  /* about */
+  .about ul li {
+      font-size: 17px;
+      text-transform: capitalize;
+  }
+  .about ul li a{
+      color: rgb(255, 111, 0);
+      font-size: 18px;
+      text-transform: capitalize;
+  }
+
+  /* special order */
+  .bg-img{
+      background-image: url("../src/assets/images/demon.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 200px;
+  }
+  .bg-coloring{
+      background-color: rgba(180, 187, 187, 0.4);
+  }
+  .bg-trans{
+      background-color: rgba(180, 187, 187, 0.4);
+      height: 200px;
+  }
+  .bg-coloring a{
+      padding: 5px 40px;
+      background-color: rgb(255, 123, 0);
+      color: aliceblue;
+      transition: 0.3s ease-in-out;
+  }
+  .bg-coloring a:hover{
+      padding: 5px 45px;
+      text-decoration: none;
+      background-color: rgb(255, 94, 0);
+  }
+
+  /* login */
+
+  .bg-image{
+      background-image: url("../src/assets/images/demon.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: auto;
+  }
+  .bg-transparen{
+      background-color: rgba(202, 216, 216, 0.8);
+      height: auto;
+  }
+  .input-group-text{
+      border: 1px solid orange;
+  }
+  label{
+      text-transform: capitalize;
+  }
+
+  /* popups */
+  /* .contain-popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(14, 21, 20, 0.8), rgba(14, 21, 20, 0.5));
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+ */
+ .contain-popup-spe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(14, 21, 20, 0.5);
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+.bg-darkgrey {
+/* background-color: #1f1c1c;
+ */
+ background-color: rgba(20,20,20,255);
+}
+
+  /* register */
+  .bg-image-reg{
+      background-image: url("../src/assets/images/demon.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 80vh;
+
+  }
+  .font-new{
+  font-family: 'Outward Block';
+font-size: 7.06rem;
+letter-spacing: 0.05rem;
+  }
+  .google-btn{
+      padding: 7px 40px;
+      background-color: aliceblue;
+      border: 1px solid orange;
+      color: rgb(221, 100, 2);
+      text-decoration: none;
+  }
+  @media (min-width:778px) and (max-width:922px){
+    .google-btn{
+      padding: 7px 20px;
+      width: 80%;
+    }
+  }
+
+  .pagination{
+      background-color: rgb(188, 177, 174);
+      border: 1px solid black;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+  }
+
+  /* manga details */
+
+  .imgperson{
+      border-radius: 50%;
+      height: 60px;
+      width: 60px;
+      text-align: left;
+  }
+  .textindent{
+      text-indent: 30px;
+  }
+
+  /* order */
+
+  .payment{
+      margin-top: 30px;
+      width: 300px;
+      padding: 10px 30px;
+      font-size: 20px;
+  }
+
+  /* admin home */
+
+
+  /* admin panel nav */
+
+  .sidenav-height{
+      height: 100%;
+  }
+  .sidenav-height ul{
+     list-style-type: none;
+     text-align: center;
+  }
+
+
+  /* Fixed navigation */
+  .sidenav-height nav ul {
+      padding: 15px;
+  }
+  .sidenav-height nav ul li a{
+      padding: 3px 30px;
+      color: white;
+      transition: 0.3s ease;
+  }
+  .sidenav-height nav ul li a:hover{
+      font-size: 15px;
+      color: rgb(222, 217, 217);
+  }
+
+  .sidenav-height {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 230px;
+      z-index: 100;
+  }
+
+  .col-lg-10 {
+      margin-left: 230px;
+      height: auto;
+  }
+
+  @media (max-width: 991px) {
+      .sidenav-height {
+          position: static;
+          height: auto;
+          margin-bottom: 20px;
+          padding-bottom: 20px;
+          border-bottom: 1px solid #ccc;
+          width: 100%;
+      }
+
+      .col-lg-10 {
+          margin-left: 0;
+      }
+  }
+
+
+  /* operations */
+  .del{
+      padding: 5px 10px;
+      background-color: rgb(207, 5, 5);
+      color: aliceblue;
+  }
+  .edit{
+      padding: 5px 10px;
+      background-color: rgb(18, 181, 167);
+      color: aliceblue;
+  }
+  .det{
+      padding: 5px 10px;
+      background-color: rgb(36, 48, 44);
+      color: aliceblue;
+  }
+  .del:hover{
+      text-decoration: none;
+      background-color: rgb(167, 6, 6);
+      color: aliceblue;
+  }
+  .det:hover{
+      text-decoration: none;
+      background-color: rgb(14, 21, 20);
+      color: aliceblue;
+  }
+  .edit:hover{
+      text-decoration: none;
+      background-color: rgb(4, 116, 107);
+      color: aliceblue;
+  }
+  a:hover{
+      text-decoration: none;
+  }
+
+  /* add news */
+
+  .border-black{
+      border: 1px solid rgb(240, 175, 175);
+      padding: 20px;
+      background-color: #faf6f6;
+  }
+
+  .heih{
+      height: 200px;
+  }
+  .fot{
+      margin-left: 230px;
+  }
+
+  .height-table-img{
+      width: 150px;
+      height: 150px;
+  }
+
+  .error{
+      color: red;
+      text-transform: uppercase;
+
+  }
+
+  .card-body{
+      height: 300px;
+  }
+
+  /* flying cart */
+
+
+  .fly-cart {
+      height: 100%;
+      position: fixed;
+      top: 0;
+      right: 0;
+      border: 1px solid black;
+      width: 300px;
+      padding: 5px;
+      /* display: none; */
+      background-color: #f1eeee;
+    }
+    .close-cart {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      cursor: pointer;
+    }
+    .contain-product {
+      height: 100px;
+      border: 1px solid black;
+      margin: 5px;
+      margin-top: 50px;
+      display: flex;
+    }
+    .contain-product .contain-img {
+      width: 30%;
+      height: 100px;
+    }
+    .contain-product .contain-img img {
+      width: 100%;
+      height: 100%;
+    }
+    .contain-product .contain-content {
+      height: 100px;
+      font-size: 12px;
+      width: 30%;
+      padding: 0;
+      padding-left: 20px;
+    }
+    .delete-prod {
+      margin-top: 40px;
+    }
+
+
+    /* loader */
+    .loader-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .loader {
+      animation: spin 2s linear infinite;
+    }
+    .loader img{
+      width: 100%;
+      height: 300px;
+
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+
+
+    }
+    /* .loader {
+    }
+    .loader img{
+      width: 300px;
+      height: 300px;
+      animation: spin 2s linear infinite;
+
+    }
+
+    @keyframes spin {
+
+
+      0% {
+        width: 300px; }
+      50% { transform: scale(1.5);  }
+      100% { width: 300px;   }
+
+    } */
+
+
+/* floating cart */
+.float-cart
+{
+ /* background-color: #dad6d6;
+ box-shadow: #0b0b0b 4px 20px 20px 0px; */
+ backdrop-filter: blur(7px) saturate(180%);
+ -webkit-backdrop-filter: blur(7px) saturate(180%);
+ background-color: rgba(255, 255, 255, 0.8);
+ position: fixed;
+ top: 0;
+ right: 0;
+ height: 100%;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.contain-search .text-right{
+  margin-top: 150px;
+}
+.contain-search input{
+width: 500px;
+height: 50px;
+}
+
+
+
+
+.card-allmangalist{
+  height: 400px;
+  background-color: rgba(224, 219, 219, 0.5);
+  box-shadow: #9f9c9c 2px 4px 4px 0px;
+  color: #231b1b;
+  border-radius: 0.5rem;
+  border: 1px solid orangered;
+}
+.card-allmangalist .attribute-title{
+  font-family: fantasy;
+font-size: 2rem;
+}
+.card-allmangalist a{
+  background-color: orangered;
+  margin-left: 1rem;
+}
+
+.topborders{
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.bg-dark-alllist{
+  background-color: rgba(242, 239, 239, 0.5);
+}
+.bg-ofpopup{
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+}
+.alert-new{
+
+  color: #0a0a0a;
+  border-radius: 0.5rem;
+  border: 1px solid orangered;
+  padding: 0.5rem;
+  backdrop-filter: blur(6px) saturate(48%);
+  -webkit-backdrop-filter: blur(6px) saturate(48%);
+  background-color: rgba(255, 255, 255, 0.62);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.alert-new a{
+  color: #f1eeee;
+  text-decoration: none;
+}
+.closingerror{
+  position: absolute;
+  right: 0.2rem;
+  top: 10px;
+  cursor: pointer;
+}
+
+.hover-imglst:hover{
+  transform: scale(1.01);
+}
+
+
+.next{
+  backdrop-filter: blur(7px) saturate(180%);
+  -webkit-backdrop-filter: blur(7px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: rgb(236, 83, 7);
+  text-align: center;
+  padding-top: 40%;
+  /* padding: 3rem ; */
+}
+.prev{
+  backdrop-filter: blur(7px) saturate(180%);
+  -webkit-backdrop-filter: blur(7px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: rgb(236, 83, 7);
+  text-align: center;
+  padding-top: 40%;
+}
+
+.font-neww{
+  font-family: 'Outward Block';
+  font-size: 4rem;
+}
+
+.buy-button{
+  background-color: #ce2508;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 18px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+/* password input */
+.input-group-pss {
+  position: relative;
+}
+
+.input-group-text {
+  outline: 1px solid orange;
+}
+
+.password-input {
+  position: relative;
+  width: 100%; /* Use 100% width for responsiveness */
+  border: none;
+  height: 2.39rem;
+  text-align: center;
+  outline: 1px solid orange;
+  border-radius: 0.5rem;
+  padding-right: 2.5rem; /* Add some padding to accommodate the toggle button */
+}
+
+.password-toggle {
+  position: absolute;
+  height: 100%; /* Use 100% height for responsiveness */
+  cursor: pointer;
+  background-color: #fff;
+  transition: background-color 0.3s ease-in-out;
+  right: 0; /* Position it to the right side of the password input */
+  top: 0; /* Align it with the top of the password input */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.password-toggle:hover {
+  background-color: #eedbc8;
+}
+
+.bg-light {
+  background-color: #888888;
+  border-radius: 0.5rem;
+}
+
+.bg-light .img {
+  height: 300px;
+  /* object-fit: cover; */
+}
+.bg-light .remove{
+  margin: auto;
+  border: none;
+  font-size: 1.5rem;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease-in-out;
+}
+.bg-light .remove:hover{
+  background-color: #ec6922;
+  color: #f1eeee;
+  border-radius: 0.5rem;
+
+}
+.mtop{
+  margin-top: 300px;
+}
+
+.quantity{
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #eedbc8;
+  color: #0a0a0a;
+  font-size: 2rem;
+}
+.quantity:hover{
+  background-color: #ec6922;
+color: #f1eeee;
+}
+.qua2{
+  font-family: 'Outward Block';
+font-size: 4rem;
+letter-spacing: 0.2rem;
+}
+.qua{
+  font-family: 'Outward Block';
+font-size: 2rem;
+}
+

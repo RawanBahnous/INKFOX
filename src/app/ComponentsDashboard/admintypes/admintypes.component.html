@@ -1,0 +1,56 @@
+<h2 class="mt-2 text-center">Manga Types</h2>
+<hr>
+<div class="row justify-content-center p-4">
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="input-group">
+          <input
+            type="text"
+            placeholder="Search By Name"
+            class="form-control"
+            #searching
+          />
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" (click)="search(searching.value)">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <a (click)="sort()">Sort</a>
+      </div>
+      <div class="col-md-3 text-right">
+        <button (click)="addtype()">Add Type</button>
+      </div>
+    </div>
+  </div>
+</div>
+<hr />
+<div class="row justify-content-center mt-4 p-5">
+  <div class="col-md-7">
+    <div class="table-responsive">
+      <table class="table">
+        <thead class="text-uppercase">
+          <tr>
+            <th>Types</th>
+            <th>news count</th>
+            <th>operations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let t of typesLst ; let i = index">
+            <td>Type {{i+1}} Name  : {{t.typename}}</td>
+            <td>
+              150
+            </td>
+            <td><a (click)="delete(t.id)" class="del">Delete</a>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

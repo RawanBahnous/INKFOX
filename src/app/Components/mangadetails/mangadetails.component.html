@@ -1,0 +1,149 @@
+
+
+<!-- Manga Details -->
+<div class="row justify-content-center p-4 border bg-image-reg">
+  <div class="col-lg-8 border">
+    <div class="row justify-content-center p-4 bg-transparen">
+      <div class="col-12">
+        <div class="row justify-content-center" *ngIf="mangaDetails">
+          <div class="col-md-6">
+            <img
+              [src]="mangaDetails.imageURL"
+              class="w-100 heightoo"
+              alt="manga"/>
+            <div class="row mt-1">
+              <p *ngIf="mangaDetails.mangImgLst">Manga Details</p>
+              <div class="col-sm-4 mt-1" *ngFor="let im of mangaDetails.mangImgLst">
+                <img
+                *ngIf="im"
+                  [src]="im"
+                  class="w-100 height-img-list hover-imglst"
+                  alt="manga"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row">
+              <h1 class="font-outward-block-sm">{{ mangaDetails.Title }}</h1>
+              <input
+                [value]="showViews ? 'Hide Reviews' : 'Show Reviews'"
+                (click)="view()"
+                type="button"
+                class="d-sm-none d-md-block btn btn-outline-dark"
+              />
+            </div>
+            <div class="row">
+              <p>
+                {{ mangaDetails.Desc }}
+              </p>
+              <p>Type : {{ mangaDetails.Type }}</p>
+              <p>Price : {{ mangaDetails.Price | currency }}</p>
+            </div>
+            <div class="row mt-3">
+              <button (click)="addToCart()" class="button">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center border-top">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-9">
+            <div class="row contain-slider mt-5" id="contain-slider">
+              <div class="col-sm-1">
+                <div class="prev " (click)="prev()">
+                  <i class="fa fa-chevron-left" ></i>
+                </div>
+              </div>
+
+              <div class="col-sm-9">
+                <div class="row contain-slider mt-5" id="contain-slider">
+                  <div class="col-sm-3 slide-item" *ngFor="let m of mangaList">
+                    <a routerLink="/mangalist/{{ m.id }}">
+                      <img
+                        [src]="m.imageURL"
+                        [style.display]="m.display"
+                        class="w-100 h-100"
+                        alt="m.Title"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-1">
+
+                <div class="next" (click)="next()">
+                  <i class="fa fa-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="col-lg-3 mt-1 marl-2 bg-transparen border"
+    [hidden]="!showViews"
+    id="review-sec"
+  >
+    <div class="row justify-content-center p-4">
+      <div class="col-12">
+        <div class="row">
+          <h4>Reviews Section</h4>
+        </div>
+        <div class="row p-1 justify-content-center border">
+          <div class="col-md-3 mt-1 text-left">
+            <img
+              src="assets/images/aot.jpg"
+              class="imgperson"
+              alt="imgperson"
+            />
+          </div>
+          <div class="col-md-9">
+            <p class="textindent">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut velit
+              laboriosam numquam hic. Facere doloremque neque nostrum fugiat
+              voluptatem aperiam eligendi nemo reiciendis, similique molestias
+              iste ducimus repudiandae quidem aliquid!
+            </p>
+          </div>
+        </div>
+        <div class="row mt-1">
+          <textarea
+            placeholder="Leave a Review"
+            rows="4"
+            class="w-100 form-control"
+          ></textarea>
+        </div>
+        <div class="row mt-2">
+          <a href="" class="button">ADD</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row justify-content-end" [hidden]="!opencart">
+  <div class="col-md-3 float-cart">
+    <div class="contain-order mt-5">
+      <div class="row contain-cart-info">
+        <div class="col-md-10">
+       <h6 class="font-neww" routerLink="/cartlist">Your Cart </h6>
+        </div>
+        <div class="col-md-2 mt-2">
+        <button (click)="closeCart()">X</button>
+        </div>
+      </div>
+      <hr>
+      <div class="row mt-2 " *ngFor="let o of cartlist">
+        <div class="col-4 ">
+          <img [src]="o.imageURL" class="w-100" />
+        </div>
+        <div class="col-3">{{ o.Title }}</div>
+        <div class="col-3 ">{{ o.Price | currency}}</div>
+        <hr class="mt-2">
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,117 @@
+<div class="row justify-content-center bg-darkgrey p-2">
+        <div class="col-lg-10">
+        <div class="input-container">
+          <input
+            type="text"
+            id="searchname"
+            class="searchstyle w-75 "
+            #searchname
+            placeholder=" search By Manga Name"
+          />
+          <a class="noline icon" (click)="searchByname(searchname.value)"
+            ><i class="fa fa-search" aria-hidden="true"></i></a>
+        </div>
+      </div>
+</div>
+
+
+    <!-- header -->
+<div class="row justify-content-center border bg-black p-5">
+        <div class="col-md-10">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="row justify-content-center">
+                <div class="col-md-12 text-white">
+                  <h1 class="font-outward-block-sm text-white">{{selectedMangaType}} Manga List</h1>
+                  <p *ngIf="(selectedMangaType == Action)">
+                    Action manga is all about thrilling adventures, intense battles, and high-stakes conflicts. These stories are filled with action-packed sequences, powerful heroes, and formidable villains. From martial arts tournaments to epic showdowns between superhuman abilities, action manga keeps readers on the edge of their seats with its adrenaline-pumping storytelling. The genre often incorporates elements of fantasy or science fiction to create unique worlds where characters harness incredible powers. Action manga is known for its fast-paced narratives and the excitement of watching characters overcome seemingly insurmountable challenges.
+                  </p>
+                  <p *ngIf="(selectedMangaType == Drama)">
+                    Drama manga is a genre that delves into the complexities of human emotions and relationships. These stories often revolve around characters facing personal challenges, difficult life decisions, or emotional turmoil. They explore themes like love, loss, friendship, and personal growth. Drama manga can be heartwarming and poignant, making readers deeply empathize with the characters' struggles. It's a genre that tugs at the heartstrings and provides a window into the human condition, showcasing how people cope with adversity and change.
+                  </p>
+                  <p *ngIf="(selectedMangaType == Fantasia)">
+                    Fantasy manga transports readers to magical realms, where the impossible becomes reality. These stories feature fantastical creatures, enchanted landscapes, and mystical powers. Whether set in medieval kingdoms, modern urban fantasies, or entirely original worlds, fantasy manga offers escapism at its finest. Protagonists embark on quests, unravel ancient prophecies, and wield extraordinary abilities. The genre allows for boundless creativity, where authors craft richly detailed settings and cultures, bringing to life the wonders of imagination. Fantasy manga offers a sense of wonder and adventure as readers explore realms where anything can happen
+                  </p>
+                  <a (click)="goBack()" class="button">BACK</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="row contain-slider mt-5">
+                <div class="col-md-12 slide-item" *ngIf="lastmanga">
+                  <div class="row justify-content-center" [style.display]="lastmanga.display">
+                    <div class="col-12">
+                      <div class="manga-container w-100">
+                        <img [src]="lastmanga.imageURL" class="w-100 heightoo" />
+                        <div class="manga-text">
+                        <h2 class="manga-title font-outward-block-vsm">{{ lastmanga.Title }}</h2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+      <!-- Manga List -->
+<div class="row justify-content-center p-5 bg-coloring border">
+        <div class="col-md-10 text-center">
+          <!-- div contain sections -->
+
+          <div class="row justify-content-center  mt-1 p-1" id="contain-cards">
+            <div class="col-md-4 mt-2" *ngFor="let m of mangaList" >
+              <div class="card">
+                <div class="card-img-top" >
+                  <img [src]="m.imageURL" width="100%" alt="" />
+                </div>
+                <div class="card-body mb-2">
+                  <h3>{{m.Title}}</h3>
+                  <h5>Type:
+                    {{m.Type}}
+                  </h5>
+                  <p>price:
+                    {{m.Price}}
+                  </p>
+                  <p class="ellipsis">
+                    {{m.Desc}}
+                  </p>
+                  <a
+                  routerLink="/mangalist/{{m.id}}"
+                    class="buy-button mb-4">Manga Details</a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center" id="notFound" *ngIf="!searchingFound" >
+            <div class="col-md-7">
+              <h5>This Manga Does not exist yet You Can make a spestial Order </h5>
+            <br>
+            <a title="you can now order a spetial manga">Send Special Order</a>
+            </div>
+          </div>
+
+          <div class="row justify-content-center p-4 border">
+            <div class="col-1">
+              <div class="row justify-content-center">
+                <div class="col-2">
+                  <button class="pagination"></button>
+                </div>
+                <div class="col-2">
+                  <button class="pagination"></button>
+                </div>
+                <div class="col-2">
+                  <button class="pagination"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+</div>

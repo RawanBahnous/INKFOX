@@ -1,0 +1,44 @@
+
+ <!-- top manga sales -->
+ <!-- <div class="row justify-content-center border bg-black">
+  <div class="col-md-10 text-center mt-5">
+    <h2 class="border-bottom text-white">Top Manga</h2>
+    <div class="row justify-content-center mt-2" >
+      <div class="col-md-4" *ngFor="let t of topManga">
+        <div class="contain-card">
+          <div class="img-box">
+            <a ><img [src]="t.imageURL" alt="" /></a>
+          </div>
+          <div class="content">
+            <h2>{{t.Title}}</h2>
+            <p>
+              {{t.Desc}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+ <div class="row justify-content-center border bg-black">
+  <div class="col-md-10 text-center mt-5">
+    <h2 class="border-bottom text-white">Top Manga</h2>
+    <div class="row justify-content-center mt-2" >
+<div class="movie-card col-lg-4 col-md-12" *ngFor="let t of topManga">
+  <div class="image-overlay">
+      <a ><img [src]="t.imageURL" alt="{{t.Title}}" /></a>
+    <div class="text-overlay">
+      <h2>{{t.Title}}</h2>
+      <p>
+        {{t.Desc}}
+      </p>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+ </div>
+

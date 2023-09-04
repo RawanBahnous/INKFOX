@@ -1,0 +1,89 @@
+<!-- login -->
+<div class="row justify-content-center border p-5 bg-image">
+  <div class="col-md-8 bg-transparen border pb-5 mb-3">
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center mt-2">
+        <img src="assets/images/logo - Copy.png" class="w-50 h-100" alt="" />
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center">
+        <h4 class="font-new">Welcome Again</h4>
+      </div>
+    </div>
+    <form [formGroup]="valideLogin">
+      <div class="row justify-content-center mt-2">
+        <div class="col-md-1">
+          <label for="email">email</label>
+        </div>
+        <div class="col-md-6">
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            placeholder="Enter Your email"
+            class="w-100 input-group-text"
+          />
+          <span
+            class="error"
+            id="errormail"
+            *ngIf="
+              this.valideLogin.get('email')?.errors &&
+              this.valideLogin.get('email')?.touched
+            "
+            >Email is required</span
+          >
+        </div>
+      </div>
+      <div class="row justify-content-center mt-2">
+        <div class="col-md-1">
+          <label for="password">password</label>
+        </div>
+        <!-- Password Input -->
+<div class="col-md-6">
+    <div class="input-group input-group-pss">
+      <input
+        type="{{ !showpass ? 'password' : 'text' }}"
+        id="password"
+        formControlName="pass"
+        placeholder="Enter Your password"
+        class="w-100 password-input"
+      />
+      <span class="input-group-text password-toggle" (click)="showPass()" style="cursor: pointer;">
+        <i class="{{ showpass ? 'fa fa-eye-slash' : 'fa fa-eye' }}"></i>
+      </span>
+    </div>
+
+
+  <span
+    class="error"
+    id="errorpass"
+    *ngIf="valideLogin.get('pass')?.errors && this.valideLogin.get('pass')?.touched"
+    >Password is required and must be at least 8 characters long
+  </span>
+</div>
+
+      </div>
+      <div class="row justify-content-center mt-4">
+        <div class="col-md-6 text-center">
+          <a (click)="login()" class="button">Login</a>
+        </div>
+      </div>
+    </form>
+
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-6 text-center">
+        <a routerLink="/register">Register Instead</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row justify-content-center bg-ofpopup" [hidden]="showpopup">
+  <div class="col-6  alert-new text-center text-uppercase">
+    <h2>You are not registered yet!</h2>
+    <a routerLink="/register"  class="buy-button">Register Now</a>
+
+    <p (click)="close()" class="closingerror">X</p>
+  </div>
+</div>

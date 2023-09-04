@@ -1,0 +1,24 @@
+
+<div class="loader-container" *ngIf="isLoading">
+  <div class="loader">
+    <img src="assets/images/logo.png" alt="">
+  </div>
+</div>
+
+<!--  main content  -->
+<div class="row justify-content-center" *ngIf="!auth.getCurrentUser()?.isAdmin">
+  <app-navbar></app-navbar>
+  <router-outlet ></router-outlet>
+  <app-footer></app-footer>
+</div>
+
+<!-- admin home -->
+<div class="row justify-content-center" *ngIf="auth.isLoggedIn() && auth.getCurrentUser()?.isAdmin">
+  <div class="col-md-2">
+    <app-adminnav></app-adminnav>
+  </div>
+  <div class="col-md-10">
+    <app-adminhome></app-adminhome>
+  <app-adminfooter></app-adminfooter>
+  </div>
+</div>

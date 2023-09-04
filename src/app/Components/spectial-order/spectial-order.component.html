@@ -1,0 +1,76 @@
+<!-- special order -->
+<div class="row justify-content-center">
+  <div class="col-md-6 bg-img text-center">
+    <div class="row bg-trans">
+      <div class="col-12 bg-trans">
+        <h4 class="font-outward-block-sm text-orange">Make Special Manga order</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 bg-coloring p-3">
+    <div class="row mt-3">
+      <div class="col-md-6 ">
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="w-100"
+          #mail
+          placeholder="Enter Your Email"
+        />
+      </div>
+      <div class="col-md-6 ">
+        <input
+          type="text"
+          name="fname"
+          id="fname"
+          class="w-100"
+          #name
+          placeholder="Enter Your Name"
+        />
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-12">
+        <textarea
+          name=""
+          id="orderspecial"
+          cols="30"
+          class="w-100 h-100"
+          #specorder
+          placeholder="Enter Your Order And Type"
+        ></textarea>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-3">
+      <div class="col-md-10 text-center">
+        <a (click)="specialOrder(name.value,mail.value,specorder.value)"  type="submit">Send</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="contain-popup-spe" [hidden]="!showPopup">
+  <div class="row justify-content-center" >
+    <div class="col-12 alert alert-success p-5 text-center">
+      <h2>Your order's been saved</h2>
+      <p>Will get your order soon</p>
+      <p (click)="cancel()" class="closingerror p-3">X</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="contain-popup-spe" [hidden]="!showError">
+  <div class="row justify-content-center" >
+    <div class="col-12 alert alert-danger p-5 text-center">
+
+      <h3>You Must Fill All Data</h3>
+      <p (click)="cancelerror()" class="closingerror p-3">X</p>
+
+    </div>
+  </div>
+</div>
+

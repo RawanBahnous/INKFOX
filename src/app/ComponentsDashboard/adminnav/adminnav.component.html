@@ -1,0 +1,18 @@
+
+ <!-- navbar -->
+ <div
+ class="col-lg-2 justify-content-center border pt-1 bg-darkgrey sidenav-height p-5"
+>
+ <nav class="nav-fill sidenav-height p-5 mt-5 text-center">
+   <img src="assets/images/logo.png" width="80px" height="70px" alt="logo" />
+   <h2 class="text-white text-center" routerLink="/dashboard/adminhome">INKFOX</h2>
+ <p class="mt-5 text-uppercase text-white">{{username}}</p>
+
+   <ul class="text-center mt-4 mr-5">
+     <li class="mt-5 text-uppercase text-white"><a routerLink="adminhome/admintypes">Types</a></li>
+     <li class="mt-5 text-uppercase text-white"><a (click)="mangalist()">Mangas</a></li>
+     <li class="mt-5 text-uppercase text-white" (click)=" logout()"><a (click)=" logout()">Logout</a></li>
+    </ul>
+ </nav>
+</div>
+

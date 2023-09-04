@@ -1,0 +1,132 @@
+
+<div class="row justify-content-center border bg-image-reg">
+  <div class="col-md-8 border p-5 bg-transparen">
+    <div class="row justify-content-center border-bottom">
+      <div class="col-sm-8">
+        <h3>Your Cart
+        <i class="fa fa-shopping-bag"></i>
+        </h3>
+      </div>
+      <div class="col-sm-4 col-lg-2">
+        <a (click)="clearCart()" class="button">
+          <i class="fa fa-solid fa-trash"></i>
+          Clear</a>
+      </div>
+    </div>
+    <div class="row justify-content-center bg-light mt-1 border" *ngFor="let i of cartArr">
+      <div class="col-md-4">
+        <img [src]="i.imageURL" class="w-100 img" alt="i.Title" />
+      </div>
+      <div class="col-md-8">
+        <div class="row justify-content-center p-2">
+          <div class="col-md-5">
+            <div class="row">
+              <h3 class="qua2">{{i.Title}}</h3>
+            </div>
+            <div class="row">
+              <p>
+                {{i.Desc}}
+              </p>
+            </div>
+          </div>
+          <div class="col-md-7 mt-5">
+            <div class="row mt-5">
+              <div class="col-md-3 mtd-4">
+                Price : {{i.Price}}$
+              </div>
+              <div class="col-sm-2 text-center mtd-4">
+                  <button class="quantity" [disabled]="i.quantity === 1" (click)="decreaseQuantity(i)">
+                    <i class="fa fa-minus"></i>
+                  </button>
+              </div>
+                <div class="col-sm-2 text-center mt-2 qua">
+                  <p>{{i.quantity}}</p>
+                </div>
+                <div class="col-sm-2 text-center mtd-4">
+                  <button class="quantity" (click)="increaseQuantity(i)">
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </div>
+              <div class="col-md-3 text-center mt-1">
+                <button class="remove" (click)="delFromCart(i.id)">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center  mt-3 border">
+      <div class="col-md-7"></div>
+      <div class="col-md-5">
+        <h2>Total Payment: {{totalPrice}}$</h2>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 bg-black border p-5">
+    <div class="row justify-content-center border-bottom">
+      <h3 class="text-white display-4">Payment</h3>
+    </div>
+    <div class="row justify-content-center">
+      <button class="payment" #paypalButton
+       (click)="setPaymentMethod(paypalButton.textContent)">
+       <i class="fa fa-paypal"></i>
+        Paypal</button>
+    </div>
+    <div class="row justify-content-center">
+      <button class="payment"  #cashButton (click)="setPaymentMethod(cashButton.textContent)">
+        <i class="fa fa-money fa-lg"></i>
+        Cash
+      </button>
+    </div>
+    <div class="row justify-content-center mt-3">
+      <input type="text" #address class="input-group w-75" placeholder="Change Address">
+    </div>
+    <div class="row justify-content-center mt-3">
+      <a (click)="finishOrder(address.value)" class="button">Order</a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="row justify-content-center bg-ofpopup" [hidden]="!showpopup">
+  <div class="col-6 text-center alert-new p-5">
+     <!-- if he is logined and the cart is not empty -->
+     <div class="row justify-content-center " *ngIf="auth.isLoggedIn()">
+      <div class="col-md-6 text-center p-5">
+        <ng-container *ngIf="!emptyCart; else emptyCartTemplate">
+          <h3>Are you Sure you want to Confirm this order?</h3>
+          <p>Total price is {{totalPrice | currency}} </p>
+          <p *ngFor="let i of cartArr">{{i.Title}}</p>
+          <button class="buy-button m-2" (click)="confirm()">Yes</button>
+          <button class="buy-button m-2" (click)="cancel()">No</button>
+        </ng-container>
+        <ng-template #emptyCartTemplate>
+          <h3>Your Cart list is Empty. View some Epic manga.</h3>
+          <button class="buy-button" routerLink="/allmangalist">All Manga</button>
+        </ng-template>
+      </div>
+    </div>
+    <!-- if he ordered and he is not logined yet -->
+    <div class="row justify-content-center" *ngIf="!auth.isLoggedIn()">
+      <div class="col-md-6 text-center  p-5">
+    <h3>You must Login before Confirm the Order</h3>
+    <a routerLink="/login" class="buy-button">Login Now</a>
+
+      </div>
+    </div>
+    <p (click)="close()" class="closingerror p-2">X</p>
+
+  </div>
+</div>
+
+<div class="row justify-content-center bg-ofpopup" *ngIf="showConfirmation">
+  <div class="col-md-6 text-center alert-new p-5">
+    <h3>Celebrate, your order will arrive very soon!</h3>
+  </div>
+</div>
+
+

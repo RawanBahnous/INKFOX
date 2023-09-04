@@ -1,0 +1,81 @@
+
+<!-- list of mangas -->
+<div class="row justify-content-center p-5 bg-coloring border">
+  <div class="col-md-10 text-center">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Some Mangas</h2>
+        <p>Remember to book your Manga!</p>
+      </div>
+    </div>
+
+    <!-- div contain sections -->
+    <div class="row justify-content-center p-4 border bg-light">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-lg-4 text-center">
+            <a onclick="sortDesc()">Sort Desceding</a>
+          </div>
+          <div class="col-lg-4 text-center">
+            <a onclick="sortAsc()">Sort Asceding</a>
+          </div>
+          <div class="col-lg-4 text-right">
+            <a href="pages/mangalists.html">Show All Mangas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+      <div class="">
+        <input
+          type="text"
+          id="searchtype"
+          class="searchstyle"
+          placeholder=" search By Manga Type"
+        />
+        <a onclick="searchBytype()"
+          ><i class="fa fa-search text-white" aria-hidden="true"></i
+        ></a>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-1 p-1" id="contain-cards">
+      <div class="col-md-4 mt-2" *ngFor="let m of mangaList" >
+        <div class="card" >
+          <div class="card-img-top" >
+            <img [src]="m.imageURL" width="100%" alt="" />
+          </div>
+          <div class="card-body">
+            <h3>{{m.Title}}</h3>
+            <h5>Type:
+              {{m.Type}}
+            </h5>
+
+            <p>price:
+              {{m.Price}}
+
+            </p>
+            <p>
+              {{m.Desc}}
+            </p>
+          </div>
+          <div class="card-footer text-left">
+            <a
+            routerLink="/mangalist/{{m.id}}"
+              class="btn btn-dark"
+              >Show Details</a
+            >
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row justify-content-center d-none" id="notFound">
+      <h5>This Manga Does not exist yet You Can make a spestial Order</h5>
+      <br />
+      <a  title="you can now order a spetial manga"
+        >Send Special Order</a
+      >
+    </div>
+  </div>
+</div>

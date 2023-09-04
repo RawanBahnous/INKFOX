@@ -1,0 +1,66 @@
+<h2 class="mt-2 text-center">Manga List</h2>
+        <hr>
+        <div class="row justify-content-center p-4 ">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    placeholder="Search By Name"
+                    class="form-control"
+                    #searching
+                  />
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" (click)="search(searching.value)">
+                      <i class="fa fa-search"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 text-center">
+                <a (click)="sort()">Sort </a>
+              </div>
+
+              <div class="col-md-3 text-right">
+                <button routerLink="/addmanga">Add Manga</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="row justify-content-center mt-4 p-5">
+          <div class="col-md-11">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-uppercase">
+                  <tr>
+                    <th>image</th>
+                    <th>title</th>
+                    <th>content</th>
+                    <th>type</th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let m of mangaLst">
+                    <td>
+                      <img src="{{m.imageURL}}" alt=" {{m.Title}}"class="height-table-img"  />
+                    </td>
+                    <td>{{m.Title}}</td>
+                    <td>
+                      {{m.Desc}}
+                    </td>
+                    <td>{{m.Type}}</td>
+                    <td><button (click)="Delete(m.id)" class="del">Delete</button>
+                   </td>
+                   <td (click)="Go(m.id)">
+                    Details
+                   </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>

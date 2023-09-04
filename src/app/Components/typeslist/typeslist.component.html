@@ -1,0 +1,96 @@
+<div class="container-fluied">
+  <div class="container p-5">
+    <h1 class="font-outward-block-sm c-o">Manga Categories</h1>
+    <section class="p-3">
+      <div class="row">
+        <div class="col-md-3">
+          <h2 class="c-or">Drama </h2>
+        </div>
+        <div class="col-md-1" title="Go To Drama Manga List">
+          <div class="next" routerLink="/typemanga/Drama">
+            <i class="fa fa-chevron-right "></i>
+
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-lg-3 col-md-4 mt-1" *ngFor="let m of categoriesDrama">
+          <a routerLink="/mangalist/{{ m.id }}">
+          <div class="manga">
+            <div class="manga-info">
+              <h3>{{ m.Title }}</h3>
+              <p>{{ m.Type }}</p>
+              <p>Price: {{ m.Price | currency }}</p>
+              <button class="buy-button" routerLink="/mangalist/{{ m.id }}">Buy Now</button>
+            </div>
+            <img [src]="m.imageURL" alt="Manga 1" />
+          </div>
+        </a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="p-3">
+      <div class="row">
+        <div class="col-md-3">
+          <h2 class="c-or">Fantasy </h2>
+        </div>
+        <div class="col-md-1" title="Go To Drama Fantazia List">
+          <div class="next" routerLink="/typemanga/Fantazia">
+            <i class="fa fa-chevron-right "></i>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <div class="row mt-1">
+        <div class="col-lg-3 col-md-4 mt-1" *ngFor="let m of categoriesFan">
+          <a routerLink="/mangalist/{{ m.id }}">
+            <div class="manga">
+              <div class="manga-info">
+                <h3>{{ m.Title }}</h3>
+                <p>{{ m.Type }}</p>
+                <p>Price: {{ m.Price | currency }}</p>
+                <button class="buy-button" routerLink="/mangalist/{{ m.id }}">Buy Now</button>
+              </div>
+              <img [src]="m.imageURL" alt="Manga 1" />
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="p-3">
+      <div class="row">
+        <div class="col-md-3">
+          <h2 class="c-or">Action </h2>
+        </div>
+        <div class="col-md-1" title="Go To Drama Action List">
+          <div class="next" routerLink="/typemanga/Action">
+            <i class="fa fa-chevron-right "></i>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-lg-3 col-md-4 mt-1" *ngFor="let m of categoriesAction">
+          <a routerLink="/mangalist/{{ m.id }}">
+            <div class="manga">
+              <div class="manga-info">
+                <h3>{{ m.Title }}</h3>
+                <p>{{ m.Type }}</p>
+                <p>Price: {{ m.Price | currency }}</p>
+                <button class="buy-button" routerLink="/mangalist/{{ m.id }}">Buy Now</button>
+              </div>
+              <img [src]="m.imageURL" alt="Manga 1" />
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </div>
+</div>

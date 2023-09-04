@@ -1,0 +1,45 @@
+<!-- slider div for manga -->
+<div class="row justify-content-center bg-img-manga p-2">
+  <div class="col-md-10">
+    <div class="row justify-content-center bg-transperncy p-2">
+      <div class="col-md-7">
+        <div class="row justify-content-center">
+          <div class="col-md-12 contain-text-slider">
+            <h1 class="font-outward-block">Inkfox Website</h1>
+            <p>
+              An immersive online platform dedicated to manga enthusiasts.
+              Comprehensive Collection: Explore a vast and diverse array of manga lists.
+              User-Friendly Design: Navigate through the platform effortlessly with an visually appealing user interface.
+            </p>
+            <a routerLink="/register" class="button" *ngIf="!authServ.isLoggedIn()">Join Us Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 contain-slider-imgs">
+        <div class="row contain-slider mt-5">
+          <div class="col-md-5 slide-item" *ngFor="let m of mangaList">
+            <div class="row justify-content-center" [style.display]="m.display">
+              <div class="col-12">
+                <a routerLink="/mangalist/{{ m.id }}">
+                <div class="manga">
+                  <div class="manga-info">
+                    <h3>{{ m.Title }}</h3>
+                    <p>{{ m.Type }}</p>
+                  </div>
+                  <img [src]="m.imageURL" class="w-100" alt="Manga 1" />
+                </div>
+              </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-1">
+            <div class="next" (click)="next()">
+              <i class="fa fa-chevron-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

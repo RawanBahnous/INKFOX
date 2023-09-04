@@ -1,0 +1,57 @@
+.card-allmangalist{
+  min-height: 500px;
+}
+.contain-search{
+  margin-bottom: 3rem;
+}
+
+@media (min-width:60px)
+{
+  .searchstyle
+  {
+    width: 100%;
+  }
+  .contain-search{
+    width: 100%;
+    margin-bottom: 50rem;
+  }
+}
+
+.contain-search {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.contain-search input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+.contain-search a {
+  top: 0px;
+  left: 10px;
+  text-decoration: none;
+  color: white;
+  position: absolute;
+}
+.search-container {
+  position: relative;
+  display: inline-block;
+}
+.input-container {
+  position: relative;
+}
+.search-icon {
+  position: absolute;
+  top: 90%;
+  left: 5px;
+  cursor: pointer;
+}

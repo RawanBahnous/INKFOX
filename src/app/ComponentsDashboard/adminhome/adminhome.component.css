@@ -1,0 +1,15 @@
+.bg-coloring{
+  background-image: url("../../../assets/images/dm1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: chng-bg 28s infinite;
+}
+
+.bg-trans{
+  background-color: rgba(93, 87, 87, 0.8);
+  backdrop-filter: blur(8px);
+  width: 100%;
+  height: 100%;
+  color: aliceblue;
+  }
