@@ -14,6 +14,10 @@ User-Friendly Design: Navigate through the platform effortlessly with an visuall
 Admin Dashboard: Seamlessly manage and monitor platform activities through an admin dashboard.
 
 
+Login As user :
+- Register as New one
+- Login with claims:(mail:rawan@mail.com , Pass: Raw@@123)
+
 How To Run the Project,
 
 Follow these steps to run the INKFOX project on your local machine:
