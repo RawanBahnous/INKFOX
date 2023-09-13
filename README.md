@@ -12,7 +12,7 @@
     <li><a href="https://drive.google.com/drive/folders/1iHr-7vIBB79kcPWjrXUCn8RPLBn7kzpa?usp=sharing">Project Documentation</a></li>
 </ul>
 
-<h2>Table of Contents</h2>
+<h2>Contents</h2>
 
 <ol>
     <li><a href="#features">Features</a></li>
