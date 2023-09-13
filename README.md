@@ -3,7 +3,7 @@ An immersive online platform dedicated to manga enthusiasts. Built with Angular 
 
 
 ## Project Documentation :
-- Project Documentation (https://drive.google.com/drive/folders/1iHr-7vIBB79kcPWjrXUCn8RPLBn7kzpa?usp=sharing)
+- [Project Documentation](https://drive.google.com/drive/folders/1iHr-7vIBB79kcPWjrXUCn8RPLBn7kzpa?usp=sharing)
 
 
 ## Features : 
