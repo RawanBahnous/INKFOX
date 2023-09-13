@@ -1,46 +1,57 @@
 # INKFOX
-An immersive online platform dedicated to manga enthusiasts. Built with Angular 16, a user-friendly space that lets you discover, read, and Buy a diverse collection of manga titles across genres and themes. with also admin Dashboard
 
+**INKFOX** is an immersive online platform dedicated to manga enthusiasts. This platform, built with Angular 16, provides a user-friendly space for discovering, reading, and purchasing a diverse collection of manga titles across various genres and themes. Additionally, it offers an admin dashboard for seamless management.
 
-## Project Documentation :
+## Project Documentation
+
 - [Project Documentation](https://drive.google.com/drive/folders/1iHr-7vIBB79kcPWjrXUCn8RPLBn7kzpa?usp=sharing)
 
+## Table of Contents
 
-## Features : 
+1. [Features](#features)
+2. [Usage](#usage)
+3. [Run the Project Locally](#run)
 
-- Comprehensive Collection: Explore a vast and diverse array of manga lists.
+## Features {#features}
 
-- User Friendly Design: Navigate through the platform effortlessly with an visually appealing user interface.
+- **Comprehensive Collection:** Explore a vast and diverse array of manga titles.
 
-- Admin Dashboard: Seamlessly manage and monitor platform activities through an admin dashboard.
+- **User-Friendly Design:** Navigate through the platform effortlessly with a visually appealing user interface.
 
+- **Admin Dashboard:** Seamlessly manage and monitor platform activities through the admin dashboard.
 
-## Login As user :
-- Register as New one
-- Login with claims:(mail:rawan@mail.com , Pass: Raw@@123)
+## Usage {#usage}
 
+To use the platform:
 
-## Follow these steps to run the INKFOX project on your local machine:
+- **Register as a New User**
+- **Login with Credentials:** 
+  - Email: rawan@mail.com
+  - Password: Raw@@123
 
-1 - Download the Zip File / Clone the repo :
+## Running the Project Locally {#run}
 
-    Extract the contents of the zip file to a location on your computer.
-    
-    Navigate to Project Directory
-    
-2 - Open a terminal or command prompt
+Follow these steps to run the INKFOX project on your local machine:
 
-    Use the cd command to navigate to the directory where you extracted the zip file:(cd path/to/extracted/folder)
-    
-3 - Install Dependencies:
+1. **Download the Zip File / Clone the Repo:**
+   - Extract the contents of the zip file to a location on your computer.
+   - Navigate to the project directory.
 
-    Make sure you have Node.js and npm (Node Package Manager) installed on your machine.
-    
-    Run the following command to install project dependencies: (npm i / npm install)
-    
-4- Start Running: 
+2. **Open a Terminal or Command Prompt:**
+   - Use the `cd` command to navigate to the directory where you extracted the zip file: 
+     ```
+     cd path/to/extracted/folder
+     ```
 
-    Run the following command to start the development server:
-    
-    (ng serve -o)
-    
+3. **Install Dependencies:**
+   - Ensure that you have Node.js and npm (Node Package Manager) installed on your machine.
+   - Run the following command to install project dependencies:
+     ```
+     npm install
+     ```
+
+4. **Start Running:**
+   - Run the following command to start the development server:
+     ```
+     ng serve -o
+     ```
