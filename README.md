@@ -42,37 +42,5 @@
     </li>
 </ul>
 
-<h2 id="run">Running the Project Locally</h2>
-
-<p>Follow these steps to run the INKFOX project on your local machine:</p>
-
-<ol>
-    <li><strong>Download the Zip File / Clone the Repo:</strong>
-        <ul>
-            <li>Extract the contents of the zip file to a location on your computer.</li>
-            <li>Navigate to the project directory.</li>
-        </ul>
-    </li>
-    <li><strong>Open a Terminal or Command Prompt:</strong>
-        <ul>
-            <li>Use the <code>cd</code> command to navigate to the directory where you extracted the zip file:</li>
-            <li><code>cd path/to/extracted/folder</code></li>
-        </ul>
-    </li>
-    <li><strong>Install Dependencies:</strong>
-        <ul>
-            <li>Ensure that you have Node.js and npm (Node Package Manager) installed on your machine.</li>
-            <li>Run the following command to install project dependencies:</li>
-            <li><code>npm install</code></li>
-        </ul>
-    </li>
-    <li><strong>Start Running:</strong>
-        <ul>
-            <li>Run the following command to start the development server:</li>
-            <li><code>ng serve -o</code></li>
-        </ul>
-    </li>
-</ol>
-
 </body>
 </html>
